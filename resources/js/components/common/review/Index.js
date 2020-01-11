@@ -8,20 +8,13 @@ import React from 'react';
 import ReactTable from 'react-table';
 
 class ReviewIndex extends React.Component {
-  _isMounted = false;
-
   constructor(props) {
     super(props);
     this.handleClickDelete = this.handleClickDelete.bind(this);
   }
 
   componentDidMount() {
-    this._isMounted = true;
     this.props.fetchAll();
-  }
-
-  componentWillUnmount() {
-    this._isMounted = false;
   }
 
   handleClickDelete(e,id) {
@@ -81,30 +74,26 @@ class ReviewIndex extends React.Component {
       }
     ];
 
-    if (this._isMounted) {
-      return (
-        <Container className="m-3">
-          <Loading loading={this.props.loading}>
-            <Can I="delete" a="Review">
-              <ReactTable
-                data={this.props.data}
-                columns={roleEditorColumns}
-                minRows={0}
-              />
-            </Can>
-            <Can not I="delete" a="Review">
-              <ReactTable
-                data={this.props.data}
-                columns={columns}
-                minRows={0}
-              />
-            </Can>
-          </Loading>
-        </Container>
-      );
-    } else {
-      return null;
-    }
+    return (
+      <Container className="m-3">
+        <Loading loading={this.props.loading}>
+          <Can I="delete" a="Review">
+            <ReactTable
+              data={this.props.data}
+              columns={roleEditorColumns}
+              minRows={0}
+            />
+          </Can>
+          <Can not I="delete" a="Review">
+            <ReactTable
+              data={this.props.data}
+              columns={columns}
+              minRows={0}
+            />
+          </Can>
+        </Loading>
+      </Container>
+    );
   }
 }
 
