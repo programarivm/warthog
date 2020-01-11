@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Warthog from './Warthog.js';
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import Store from './Store.js';
 
@@ -10,9 +10,9 @@ import 'react-table/react-table.css';
 
 ReactDOM.render(
   <Provider store={Store}>
-    <BrowserRouter>
+    <HashRouter>
       <Warthog />
-    </BrowserRouter>
+    </HashRouter>
   </Provider>,
   document.getElementById('warthog')
 );
