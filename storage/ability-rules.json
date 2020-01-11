@@ -1,0 +1,88 @@
+{
+    "ROLE_BASIC": [
+        {
+            "action": "index",
+            "subject": "Restaurant"
+        },
+        {
+            "action": "store",
+            "subject": "Review"
+        }
+    ],
+    "ROLE_EDITOR": [
+        {
+            "action": "index",
+            "subject": "Restaurant"
+        },
+        {
+            "action": "show",
+            "subject": "Restaurant"
+        },
+        {
+            "action": "update",
+            "subject": "Restaurant"
+        },
+        {
+            "action": "delete",
+            "subject": "Restaurant"
+        },
+        {
+            "action": "delete",
+            "subject": "Review"
+        },
+        {
+            "action": "index",
+            "subject": "User"
+        }
+    ],
+    "ROLE_ADMIN": [
+        {
+            "action": "index",
+            "subject": "Restaurant"
+        },
+        {
+            "action": "show",
+            "subject": "Restaurant"
+        },
+        {
+            "action": "store",
+            "subject": "Restaurant"
+        },
+        {
+            "action": "update",
+            "subject": "Restaurant"
+        },
+        {
+            "action": "delete",
+            "subject": "Restaurant"
+        },
+        {
+            "action": "delete",
+            "subject": "Review"
+        },
+        {
+            "action": "index",
+            "subject": "User"
+        },
+        {
+            "action": "show",
+            "subject": "User"
+        },
+        {
+            "action": "store",
+            "subject": "User"
+        },
+        {
+            "action": "update",
+            "subject": "User"
+        },
+        {
+            "action": "delete",
+            "subject": "User"
+        },
+        {
+            "action": "delete",
+            "subject": "User"
+        }
+    ]
+}

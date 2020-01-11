@@ -1,0 +1,49 @@
+import { Button, ButtonGroup, Col, Row } from 'reactstrap';
+import Can from '../Can';
+import { connect } from 'react-redux';
+import { LoremIpsum } from './LoremIpsum';
+import React from 'react';
+import ReviewActions from '../../actions/ReviewActions';
+import ReviewCreate from './review/Create';
+import ReviewIndex from './review/Index';
+
+class Reviews extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClickReview = this.handleClickReview.bind(this);
+  }
+
+  handleClickReview(e) {
+    this.props.click();
+    e.preventDefault();
+  }
+
+  render() {
+    return (
+      <Row className="m-3">
+        <Col md={9}>
+          <ReviewIndex />
+        </Col>
+        <Col md={3}>
+          <Can I="store" a="Review">
+            <ButtonGroup className="mt-3">
+              <Button className="mb-4" color="primary" size="sm" onClick={ (e) => this.handleClickReview(e) }>Review now!</Button>
+            </ButtonGroup>
+            <ReviewCreate />
+          </Can>
+          <Can not I="store" a="Review">
+            <LoremIpsum />
+          </Can>
+        </Col>
+      </Row>
+    );
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    click: () => dispatch(ReviewActions.click())
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Reviews);

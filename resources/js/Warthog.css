@@ -1,0 +1,7 @@
+html {
+  overflow-y: scroll;
+}
+
+.Warthog .jumbotron {
+  padding: 1.5rem;
+}
