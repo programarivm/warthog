@@ -1,3 +1,4 @@
+import ability from '../../ability';
 import ApiAuthActions from '../../actions/api/AuthActions';
 import { connect } from 'react-redux';
 import { Container } from 'reactstrap';
@@ -5,7 +6,9 @@ import React from 'react';
 
 class SignOut extends React.Component {
   componentDidMount() {
-    this.props.logout();
+    this.props.logout().then(() => {
+      ability.update([]);
+    });
   }
 
   render() {
