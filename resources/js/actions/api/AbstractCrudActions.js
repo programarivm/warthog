@@ -1,20 +1,11 @@
 import axios from 'axios';
+import { nice } from './Validation';
 
 const messages = {
 	error: 'Whoops! Sorry there was an error, please try again later.'
 };
 
 export default class AbstractCrudActions {
-	_niceValidation(errors) {
-		let messages = [];
-		Object.values(errors).forEach(error => {
-			error.forEach(message => {
-				messages.push(message);
-			});
-		});
-		return messages;
-	}
-
 	create(data) {
 		return dispatch => {
 			dispatch({ type: this.actionTypes.CREATE_LOADING });
@@ -28,10 +19,10 @@ export default class AbstractCrudActions {
 					return res;
 				})
 				.catch(error => {
-					dispatch({ type: this.actionTypes.CREATE_ERROR, data: this._niceValidation(error.response.data.errors) });
+					dispatch({ type: this.actionTypes.CREATE_ERROR, data: nice(error.response.data.errors) });
 					return {
 						status: error.response.status,
-						errors: this._niceValidation(error.response.data.errors)
+						errors: nice(error.response.data.errors)
 					};
 				});
     	}
@@ -116,10 +107,10 @@ export default class AbstractCrudActions {
 					return res;
 				})
 				.catch(error => {
-					dispatch({ type: this.actionTypes.UPDATE_ERROR, data: this._niceValidation(error.response.data.errors) });
+					dispatch({ type: this.actionTypes.UPDATE_ERROR, data: nice(error.response.data.errors) });
 					return {
 						status: error.response.status,
-						errors: this._niceValidation(error.response.data.errors)
+						errors: nice(error.response.data.errors)
 					};
 				});
 			}
