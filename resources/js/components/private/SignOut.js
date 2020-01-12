@@ -8,6 +8,7 @@ class SignOut extends React.Component {
   componentDidMount() {
     this.props.logout().then(() => {
       ability.update([]);
+      window.location.href = '/';
     });
   }
 
