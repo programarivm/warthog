@@ -1,43 +1,36 @@
-import { Col, Row } from 'reactstrap';
 import React from 'react';
-import './Footer.css';
+import { Grid } from '@material-ui/core';
 
-class Footer extends React.Component {
-  render() {
-    return (
-      <footer className="Footer p-5">
-        <Row>
-          <Col lg="2"></Col>
-          <Col lg="4">
-            <p>
-              <b>Warthog</b><br/>
-              Company Name Goes Here Limited,<br/>
-              Registered in England and Wales,<br/>
-              Company Number: 1234567890
-            </p>
-          </Col>
-          <Col lg="3">
-            <b>Legal</b><br/>
-            <ul>
-              <li>Terms and Conditions</li>
-              <li>Privacy Policy</li>
-              <li>Cookies Policy</li>
-            </ul>
-          </Col>
-          <Col lg="3">
-            <b>Social</b><br/>
-            <ul>
-              <li>Twitter</li>
-              <li>Facebook</li>
-              <li>Instagram</li>
-              <li>YouTube</li>
-            </ul>
-          </Col>
-          <Col lg="2"></Col>
-        </Row>
-      </footer>
-    );
-  }
+function Footer() {
+  return (
+    <Grid container style={{ margin: 20, padding: 20 }}>
+      <Grid item xs={4}>
+        <p>
+          <b>Warthog</b><br/>
+          Company Name Goes Here Limited,<br/>
+          Registered in England and Wales,<br/>
+          Company Number: 1234567890
+        </p>
+      </Grid>
+      <Grid item xs={4}>
+        <b>Legal</b><br/>
+        <ul>
+          <li>Terms and Conditions</li>
+          <li>Privacy Policy</li>
+          <li>Cookies Policy</li>
+        </ul>
+      </Grid>
+      <Grid item xs={4}>
+        <b>Social</b><br/>
+        <ul>
+          <li>Twitter</li>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>YouTube</li>
+        </ul>
+      </Grid>
+    </Grid>
+  );
 }
 
 export { Footer };

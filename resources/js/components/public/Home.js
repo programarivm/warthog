@@ -26,6 +26,7 @@ function Home() {
       <Grid item xs={4}>
         <p>TODO: Display image</p>
       </Grid>
+      <Footer />
     </Grid>
   );
 }
