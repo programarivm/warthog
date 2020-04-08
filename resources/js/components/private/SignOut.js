@@ -1,7 +1,7 @@
 import ability from '../../ability';
 import ApiAuthActions from '../../actions/api/AuthActions';
 import { connect } from 'react-redux';
-import { Container } from 'reactstrap';
+import { Grid } from '@material-ui/core';
 import React from 'react';
 
 class SignOut extends React.Component {
@@ -14,9 +14,9 @@ class SignOut extends React.Component {
 
   render() {
     return (
-      <Container className="mt-5 mb-5">
+      <Grid container style={{ margin: 20, padding: 20 }}>
         <p>Signing out...</p>
-      </Container>
+      </Grid>
     );
   }
 }
