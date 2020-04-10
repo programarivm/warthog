@@ -1,5 +1,5 @@
 import ApiUserActions from '../../../actions/api/UserActions';
-import { Button, ButtonGroup, Form, FormGroup, Input, Jumbotron } from 'reactstrap';
+import { Button, ButtonGroup, FormGroup, Paper, TextField } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { FormGroups } from './FormGroups';
 import Loading from '../../Loading';
@@ -53,30 +53,33 @@ class UserCreate extends React.Component {
 
   render() {
     return (
-      <Jumbotron className="mt-3">
-        <Form className="form" onSubmit={ (e) => this.handleSubmitForm(e) }>
+      <Paper style={{ padding: 15 }}>
+        <form onSubmit={ (e) => this.handleSubmitForm(e) }>
           <FormGroups {...this.state.record} handleChange={this.handleChange} />
           <FormGroup>
-            <Input
-              type="password"
-              name="password"
+            <TextField
+              required
+              fullWidth
               id="password"
-              placeholder="Password"
+              label="Password"
+              name="password"
+              type="password"
+              margin="normal"
               value={this.state.record.password}
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup>
-            <ButtonGroup>
-              <Button color="primary">Add user</Button>
+          <FormGroup style={{ marginTop: 10, marginBottom: 10 }}>
+            <ButtonGroup size="small" fullWidth>
+              <Button color="primary" type="submit">Add user</Button>
               <Button color="secondary" onClick={ (e) => this.handleClickCancel(e) }>Cancel</Button>
             </ButtonGroup>
           </FormGroup>
-        </Form>
+        </form>
         <Loading loading={this.props.loading}>
           <Validation messages={this.state.response} />
         </Loading>
-      </Jumbotron>
+      </Paper>
     );
   }
 }
