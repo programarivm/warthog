@@ -1,7 +1,7 @@
 import ApiRestaurantActions from '../../../actions/api/RestaurantActions';
-import { Button, ButtonGroup, Form, FormGroup, Jumbotron } from 'reactstrap';
+import { Button, ButtonGroup, Paper } from '@material-ui/core';
 import { connect } from 'react-redux';
-import { FormGroups } from './FormGroups';
+import { FormInputs } from './FormInputs';
 import Loading from '../../Loading';
 import React from 'react';
 import RestaurantState from '../../../states/RestaurantState';
@@ -53,20 +53,22 @@ class RestaurantCreate extends React.Component {
 
   render() {
     return (
-      <Jumbotron className="mt-3">
-        <Form className="form" onSubmit={ (e) => this.handleSubmitForm(e) }>
-          <FormGroups {...this.state.record} handleChange={this.handleChange} />
-          <FormGroup>
-            <ButtonGroup>
-              <Button color="primary">Add restaurant</Button>
-              <Button color="secondary" onClick={ (e) => this.handleClickCancel(e) }>Cancel</Button>
-            </ButtonGroup>
-          </FormGroup>
-        </Form>
+      <Paper style={{ padding: 15 }}>
+        <form onSubmit={ (e) => this.handleSubmitForm(e) }>
+          <FormInputs {...this.state.record} handleChange={this.handleChange} />
+          <ButtonGroup
+            style={{ marginTop: 10, marginBottom: 10 }}
+            size="small"
+            fullWidth
+          >
+            <Button color="primary" type="submit">Add restaurant</Button>
+            <Button color="secondary" onClick={ (e) => this.handleClickCancel(e) }>Cancel</Button>
+          </ButtonGroup>
+        </form>
         <Loading loading={this.props.loading}>
           <Validation messages={this.state.response} />
         </Loading>
-      </Jumbotron>
+      </Paper>
     );
   }
 }
