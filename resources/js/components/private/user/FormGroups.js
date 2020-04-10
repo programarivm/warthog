@@ -1,4 +1,4 @@
-import { FormGroup, Input } from 'reactstrap';
+import { FormGroup, TextField } from '@material-ui/core';
 import React from 'react';
 
 class FormGroups extends React.Component {
@@ -6,51 +6,62 @@ class FormGroups extends React.Component {
     return (
       <div>
         <FormGroup>
-          <Input
-            type="text"
-            name="firstname"
+          <TextField
+            required
+            fullWidth
             id="firstname"
-            placeholder="First name"
+            label="First name"
+            name="firstname"
+            margin="normal"
             value={this.props.firstname}
             onChange={this.props.handleChange}
           />
         </FormGroup>
         <FormGroup>
-          <Input
-            type="text"
-            name="surname"
+          <TextField
+            required
+            fullWidth
             id="surname"
-            placeholder="Surname"
+            label="Surname"
+            name="surname"
+            margin="normal"
             value={this.props.surname}
             onChange={this.props.handleChange}
           />
         </FormGroup>
         <FormGroup>
-          <Input
-            type="date"
-            name="date_of_birth"
+          <TextField
+            required
+            fullWidth
             id="date_of_birth"
-            placeholder="Date of birth"
+            label="Date of birth"
+            name="date_of_birth"
+            type="date"
+            margin="normal"
             value={this.props.date_of_birth}
             onChange={this.props.handleChange}
           />
         </FormGroup>
         <FormGroup>
-          <Input
-            type="text"
-            name="phone_number"
+          <TextField
+            required
+            fullWidth
             id="phone_number"
-            placeholder="Phone number"
-            value={this.props.phone_number ? this.props.phone_number : ''}
+            label="Phone number"
+            name="phone_number"
+            margin="normal"
+            value={this.props.phone_number}
             onChange={this.props.handleChange}
           />
         </FormGroup>
         <FormGroup>
-          <Input
-            type="text"
-            name="email"
+          <TextField
+            required
+            fullWidth
             id="email"
-            placeholder="Email"
+            label="Email"
+            name="email"
+            margin="normal"
             value={this.props.email}
             onChange={this.props.handleChange}
           />
