@@ -1,7 +1,7 @@
 import ApiUserActions from '../../../actions/api/UserActions';
-import { Button, ButtonGroup, FormGroup, Paper, TextField } from '@material-ui/core';
+import { Button, ButtonGroup, Paper, TextField } from '@material-ui/core';
 import { connect } from 'react-redux';
-import { FormGroups } from './FormGroups';
+import { FormInputs } from './FormInputs';
 import Loading from '../../Loading';
 import React from 'react';
 import UserState from '../../../states/UserState';
@@ -55,26 +55,26 @@ class UserCreate extends React.Component {
     return (
       <Paper style={{ padding: 15 }}>
         <form onSubmit={ (e) => this.handleSubmitForm(e) }>
-          <FormGroups {...this.state.record} handleChange={this.handleChange} />
-          <FormGroup>
-            <TextField
-              required
-              fullWidth
-              id="password"
-              label="Password"
-              name="password"
-              type="password"
-              margin="normal"
-              value={this.state.record.password}
-              onChange={this.handleChange}
-            />
-          </FormGroup>
-          <FormGroup style={{ marginTop: 10, marginBottom: 10 }}>
-            <ButtonGroup size="small" fullWidth>
-              <Button color="primary" type="submit">Add user</Button>
-              <Button color="secondary" onClick={ (e) => this.handleClickCancel(e) }>Cancel</Button>
-            </ButtonGroup>
-          </FormGroup>
+          <FormInputs {...this.state.record} handleChange={this.handleChange} />
+          <TextField
+            required
+            fullWidth
+            id="password"
+            label="Password"
+            name="password"
+            type="password"
+            margin="normal"
+            value={this.state.record.password}
+            onChange={this.handleChange}
+          />
+          <ButtonGroup
+            style={{ marginTop: 10, marginBottom: 10 }}
+            size="small"
+            fullWidth
+          >
+            <Button color="primary" type="submit">Add user</Button>
+            <Button color="secondary" onClick={ (e) => this.handleClickCancel(e) }>Cancel</Button>
+          </ButtonGroup>
         </form>
         <Loading loading={this.props.loading}>
           <Validation messages={this.state.response} />
