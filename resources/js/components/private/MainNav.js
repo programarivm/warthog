@@ -4,7 +4,7 @@ import {
   NavbarToggler, NavbarBrand, NavItem, NavLink, UncontrolledDropdown } from 'reactstrap';
 import { Link, NavLink as RouterNavLink, Route } from 'react-router-dom';
 import React from 'react';
-import { Restaurants } from './Restaurants';
+import Restaurants from './Restaurants';
 import Reviews from '../common/Reviews';
 import SignOut from './SignOut';
 import { Users } from './Users';
