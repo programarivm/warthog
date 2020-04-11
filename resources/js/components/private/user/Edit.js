@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { FormInputs } from './FormInputs';
 import Loading from '../../Loading';
-import { Range } from 'react-range';
 import React from 'react';
 import Validation from '../../Validation';
 
