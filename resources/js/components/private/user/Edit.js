@@ -22,7 +22,7 @@ const styles = theme => ({
   },
 });
 
-class TransitionModal extends React.Component {
+class UserEdit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -130,4 +130,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(TransitionModal));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(UserEdit));
