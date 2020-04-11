@@ -1,4 +1,5 @@
-import { Button, ButtonGroup, Col, Row } from 'reactstrap';
+import { Button, ButtonGroup, Grid } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 import Can from '../Can';
 import { connect } from 'react-redux';
 import { LoremIpsum } from './LoremIpsum';
@@ -6,6 +7,19 @@ import React from 'react';
 import ReviewActions from '../../actions/ReviewActions';
 import ReviewCreate from './review/Create';
 import ReviewIndex from './review/Index';
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    height: 140,
+    width: 100,
+  },
+  control: {
+    padding: theme.spacing(2),
+  },
+});
 
 class Reviews extends React.Component {
   constructor(props) {
@@ -19,23 +33,24 @@ class Reviews extends React.Component {
   }
 
   render() {
+    const { classes } = this.props;
     return (
-      <Row className="m-3">
-        <Col md={9}>
+      <Grid container className={classes.root}>
+        <Grid item xs={9} className={classes.control}>
           <ReviewIndex />
-        </Col>
-        <Col md={3}>
+        </Grid>
+        <Grid item xs={3} className={classes.control}>
           <Can I="store" a="Review">
-            <ButtonGroup className="mt-3">
-              <Button className="mb-4" color="primary" size="sm" onClick={ (e) => this.handleClickReview(e) }>Review now!</Button>
+            <ButtonGroup color="primary" size="small" aria-label="outlined primary button group">
+              <Button onClick={ (e) => this.handleClickReview(e) }>Review now!</Button>
             </ButtonGroup>
             <ReviewCreate />
           </Can>
           <Can not I="store" a="Review">
             <LoremIpsum />
           </Can>
-        </Col>
-      </Row>
+        </Grid>
+      </Grid>
     );
   }
 }
@@ -46,4 +61,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(Reviews);
+export default connect(null, mapDispatchToProps)(withStyles(styles)(Reviews));
