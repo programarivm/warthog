@@ -100,16 +100,16 @@ class RestaurantEdit extends React.Component {
         >
           <Fade in={this.state.modal.open}>
             <div className={classes.paper}>
-              <form onSubmit={ (e) => this.handleSubmitForm(e) }>
+              <form onSubmit={ (e) => this.handleClickUpdate(e) }>
                 <FormInputs {...this.state.record} handleChange={this.handleChange} />
+                <ButtonGroup>
+                  <Button type="submit" color="primary">Update</Button>
+                  <Button color="secondary" onClick={ (e) => this.handleClickCancel(e) }>Cancel</Button>
+                </ButtonGroup>
               </form>
               <Loading loading={this.props.loading}>
                 <Validation messages={this.state.response} />
               </Loading>
-              <ButtonGroup>
-                <Button type="submit" color="primary" onClick={ (e) => this.handleClickUpdate(e) }>Update</Button>
-                <Button color="secondary" onClick={ (e) => this.handleClickCancel(e) }>Cancel</Button>
-              </ButtonGroup>
             </div>
           </Fade>
         </Modal>
