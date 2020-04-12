@@ -1,63 +1,52 @@
-import {
-  Collapse, Nav, Navbar, NavbarToggler,
-  NavbarBrand, NavItem } from 'reactstrap';
+import { AppBar, Button, ButtonGroup, IconButton, Toolbar } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 import { Home } from './Home';
 import { Link, NavLink, Route, Redirect } from 'react-router-dom';
 import React from 'react';
 import Reviews from '../common/Reviews';
 import SignIn from './SignIn';
 import logo from '../../../images/logo.png';
-import '../common/MainNav.css';
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(1),
+  },
+  menuOption: {
+    marginRight: theme.spacing(2),
+    color: '#fff',
+    '&:hover': {
+       color: '#fff',
+    },
+  },
+  buttonGroup: {
+    backgroundColor: '#fff',
+  },
+});
 
 class MainNav extends React.Component {
-  _isMounted = false;
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false
-    };
-    this.toggle = this.toggle.bind(this);
-  }
-
-  componentDidMount() {
-    this._isMounted = true;
-  }
-
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
-
-  toggle() {
-    if (this._isMounted) {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    }
-  }
-
   render() {
+    const { classes } = this.props;
     return (
-      <div>
-        <Navbar light expand="md" className="MainNav">
-          <NavbarBrand tag={Link} to="/home">
-            <img src={logo} className="logo" alt="logo" />
-          </NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink tag={Link} to="/home">Home</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} to="/reviews">Reviews</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} to="/login">Sign In</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <NavLink tag={Link} to="/home" className={classes.menuOption}>
+                <img src={logo} alt="Warthog logo" />
+              </NavLink>
+            </IconButton>
+            <NavLink tag={Link} to="/home" className={classes.menuOption}>Home</NavLink>
+            <NavLink tag={Link} to="/reviews" className={classes.menuOption}>Reviews</NavLink>
+            <ButtonGroup size="small" aria-label="small outlined button group" className={classes.buttonGroup}>
+              <Button>
+                <NavLink tag={Link} to="/login">Sign in</NavLink>
+              </Button>
+            </ButtonGroup>
+          </Toolbar>
+        </AppBar>
         <Route exact path="/" render={() => (<Redirect to="/home" />)} />
         <Route
           path="/home"
@@ -76,4 +65,4 @@ class MainNav extends React.Component {
   }
 }
 
-export { MainNav };
+export default withStyles(styles)(MainNav);
