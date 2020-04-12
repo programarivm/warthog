@@ -6,7 +6,6 @@ import { Provider } from "react-redux";
 import Store from './Store.js';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import 'react-table/react-table.css';
 
 ReactDOM.render(
   <Provider store={Store}>
