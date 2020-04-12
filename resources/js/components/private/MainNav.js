@@ -20,6 +20,9 @@ const styles = theme => ({
        color: '#fff',
     },
   },
+  menuOptionActive: {
+    fontWeight: 'bold',
+  },
   buttonGroup: {
     backgroundColor: '#fff',
     marginLeft: 'auto',
@@ -33,19 +36,38 @@ class MainNav extends React.Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <NavLink tag={Link} to="/home" className={classes.menuOption}>
+            <NavLink
+              tag={Link}
+              to="/home"
+              className={classes.menuOption}
+            >
               <img src={logo} alt="Warthog logo" />
             </NavLink>
-            <NavLink tag={NavLink} to="/reviews" activeClassName="active" className={classes.menuOption}>
+            <NavLink
+              tag={NavLink}
+              to="/reviews"
+              className={classes.menuOption}
+              activeClassName={classes.menuOptionActive}
+            >
               Reviews
             </NavLink>
             <Can I="index" a="User">
-              <NavLink tag={NavLink} to="/users" activeClassName="active" className={classes.menuOption}>
+              <NavLink
+                tag={NavLink}
+                to="/users"
+                className={classes.menuOption}
+                activeClassName={classes.menuOptionActive}
+              >
                 Users
               </NavLink>
             </Can>
             <Can I="update" a="Restaurant">
-              <NavLink tag={NavLink} to="/restaurants" activeClassName="active" className={classes.menuOption}>
+              <NavLink
+                tag={NavLink}
+                to="/restaurants"
+                className={classes.menuOption}
+                activeClassName={classes.menuOptionActive}
+              >
                 Restaurants
               </NavLink>
             </Can>

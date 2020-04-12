@@ -18,6 +18,9 @@ const styles = theme => ({
        color: '#fff',
     },
   },
+  menuOptionActive: {
+    fontWeight: 'bold',
+  },
   buttonGroup: {
     backgroundColor: '#fff',
     marginLeft: 'auto',
@@ -31,16 +34,34 @@ class MainNav extends React.Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <NavLink tag={Link} to="/home" className={classes.menuOption}>
+            <NavLink
+              tag={Link}
+              to="/home"
+              className={classes.menuOption}
+            >
               <img src={logo} alt="Warthog logo" />
             </NavLink>
-            <NavLink tag={Link} to="/home" className={classes.menuOption}>
+            <NavLink
+              tag={Link}
+              to="/home"
+              className={classes.menuOption}
+              activeClassName={classes.menuOptionActive}
+            >
               Home
             </NavLink>
-            <NavLink tag={Link} to="/reviews" className={classes.menuOption}>
+            <NavLink
+              tag={Link}
+              to="/reviews"
+              className={classes.menuOption}
+              activeClassName={classes.menuOptionActive}
+            >
               Reviews
             </NavLink>
-            <ButtonGroup size="small" aria-label="small outlined button group" className={classes.buttonGroup}>
+            <ButtonGroup
+              size="small"
+              aria-label="small outlined button group"
+              className={classes.buttonGroup}
+            >
               <Button>
                 <NavLink tag={Link} to="/login">
                   Sign in
