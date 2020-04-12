@@ -1,5 +1,5 @@
 import ApiRestaurantActions from '../../../actions/api/RestaurantActions';
-import { ButtonGroup, Grid, IconButton, Paper, Table, TableBody, TableCell,
+import { Grid, IconButton, Paper, Table, TableBody, TableCell,
   TableContainer, TableFooter, TableHead, TablePagination, TableRow } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
@@ -135,22 +135,20 @@ class RestaurantIndex extends React.Component {
                             <TableCell>{row.address}</TableCell>
                             <TableCell>{row.lat}, {row.lon}</TableCell>
                             <TableCell align="right">
-                              <ButtonGroup color="primary" size="small" aria-label="outlined primary button group">
-                                <IconButton
-                                  aria-label="delete"
-                                  color="secondary"
-                                  onClick={ (e) => this.handleClickEdit(e, row.id) }
-                                >
-                                  <EditIcon />
-                                </IconButton>
-                                <IconButton
-                                  aria-label="delete"
-                                  color="secondary" 
-                                  onClick={ (e) => this.handleClickDelete(e, row.id) }
-                                >
-                                  <DeleteIcon />
-                                </IconButton>
-                              </ButtonGroup>
+                              <IconButton
+                                aria-label="delete"
+                                color="secondary"
+                                onClick={ (e) => this.handleClickEdit(e, row.id) }
+                              >
+                                <EditIcon />
+                              </IconButton>
+                              <IconButton
+                                aria-label="delete"
+                                color="secondary"
+                                onClick={ (e) => this.handleClickDelete(e, row.id) }
+                              >
+                                <DeleteIcon />
+                              </IconButton>
                             </TableCell>
                           </TableRow>
                         })

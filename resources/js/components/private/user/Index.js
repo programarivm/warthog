@@ -1,6 +1,6 @@
 import ApiUserActions from '../../../actions/api/UserActions';
-import { ButtonGroup, Grid, IconButton, Paper, Table, TableBody, TableCell,
-  TableContainer, TableFooter, TableHead, TablePagination, TableRow } from '@material-ui/core';
+import { Grid, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableFooter,
+  TableHead, TablePagination, TableRow } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import FirstPageIcon from '@material-ui/icons/FirstPage';
@@ -141,22 +141,20 @@ class UserIndex extends React.Component {
                             <TableCell>{row.email}</TableCell>
                             <Can I="store" a="User">
                               <TableCell align="right">
-                                <ButtonGroup color="primary" size="small" aria-label="outlined primary button group">
-                                  <IconButton
-                                    aria-label="delete"
-                                    color="secondary"
-                                    onClick={ (e) => this.handleClickEdit(e, row.id) }
-                                  >
-                                    <EditIcon />
-                                  </IconButton>
-                                  <IconButton
-                                    aria-label="delete"
-                                    color="secondary"
-                                    onClick={ (e) => this.handleClickDelete(e, row.id) }
-                                  >
-                                    <DeleteIcon />
-                                  </IconButton>
-                                </ButtonGroup>
+                                <IconButton
+                                  aria-label="delete"
+                                  color="secondary"
+                                  onClick={ (e) => this.handleClickEdit(e, row.id) }
+                                >
+                                  <EditIcon />
+                                </IconButton>
+                                <IconButton
+                                  aria-label="delete"
+                                  color="secondary"
+                                  onClick={ (e) => this.handleClickDelete(e, row.id) }
+                                >
+                                  <DeleteIcon />
+                                </IconButton>
                               </TableCell>
                             </Can>
                           </TableRow>
