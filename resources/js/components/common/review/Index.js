@@ -124,8 +124,8 @@ class ReviewIndex extends React.Component {
                     let d = new Date(row.created_at);
                     return <TableRow key={i}>
                       <TableCell align="right">{d.getDate()}/{d.getMonth()+1}/{d.getFullYear()}</TableCell>
-                      <TableCell>{row.user.firstname}</TableCell>
-                      <TableCell>{row.restaurant.name}</TableCell>
+                      <TableCell>{row.user ? row.user.firstname : null}</TableCell>
+                      <TableCell>{row.restaurant ? row.restaurant.name : null}</TableCell>
                       <TableCell>{row.comment}</TableCell>
                       <TableCell align="right">{row.points}</TableCell>
                       <Can I="delete" a="Review">
