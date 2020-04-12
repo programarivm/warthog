@@ -3,7 +3,7 @@ import { Grid } from '@material-ui/core';
 
 function Footer() {
   return (
-    <Grid container style={{ margin: 20, padding: 20 }}>
+    <Grid container style={{ margin: 20, padding: 20, listStyleType: 'none' }}>
       <Grid item xs={4}>
         <p>
           <b>Warthog</b><br/>
