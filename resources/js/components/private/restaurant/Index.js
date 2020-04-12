@@ -1,6 +1,8 @@
 import ApiRestaurantActions from '../../../actions/api/RestaurantActions';
-import { Button, ButtonGroup, Grid, IconButton, Paper, Table, TableBody, TableCell,
+import { ButtonGroup, Grid, IconButton, Paper, Table, TableBody, TableCell,
   TableContainer, TableFooter, TableHead, TablePagination, TableRow } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
 import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
@@ -134,8 +136,20 @@ class RestaurantIndex extends React.Component {
                             <TableCell>{row.lat}, {row.lon}</TableCell>
                             <TableCell align="right">
                               <ButtonGroup color="primary" size="small" aria-label="outlined primary button group">
-                                <Button onClick={ (e) => this.handleClickEdit(e, row.id) }>Edit</Button>
-                                <Button onClick={ (e) => this.handleClickDelete(e, row.id) }>Delete</Button>
+                                <IconButton
+                                  aria-label="delete"
+                                  color="secondary"
+                                  onClick={ (e) => this.handleClickEdit(e, row.id) }
+                                >
+                                  <EditIcon />
+                                </IconButton>
+                                <IconButton
+                                  aria-label="delete"
+                                  color="secondary" 
+                                  onClick={ (e) => this.handleClickDelete(e, row.id) }
+                                >
+                                  <DeleteIcon />
+                                </IconButton>
                               </ButtonGroup>
                             </TableCell>
                           </TableRow>

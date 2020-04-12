@@ -1,6 +1,7 @@
 import ApiReviewActions from '../../../actions/api/ReviewActions';
-import { Button, ButtonGroup, Grid, IconButton, Paper, Table, TableBody, TableCell,
+import { ButtonGroup, Grid, IconButton, Paper, Table, TableBody, TableCell,
   TableContainer, TableFooter, TableHead, TablePagination, TableRow } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
@@ -130,7 +131,13 @@ class ReviewIndex extends React.Component {
                       <Can I="delete" a="Review">
                         <TableCell align="right">
                           <ButtonGroup color="primary" size="small" aria-label="outlined primary button group">
-                            <Button onClick={ (e) => this.handleClickDelete(e, row.id) }>Delete</Button>
+                            <IconButton
+                              aria-label="delete"
+                              color="secondary"
+                              onClick={ (e) => this.handleClickDelete(e, row.id) }
+                            >
+                              <DeleteIcon />
+                            </IconButton>
                           </ButtonGroup>
                         </TableCell>
                       </Can>
