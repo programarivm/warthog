@@ -57,7 +57,6 @@ class UserCreate extends React.Component {
         <form onSubmit={ (e) => this.handleSubmitForm(e) }>
           <FormInputs {...this.state.record} handleChange={this.handleChange} />
           <TextField
-            required
             fullWidth
             id="password"
             label="Password"

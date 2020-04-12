@@ -6,7 +6,6 @@ class FormInputs extends React.Component {
     return (
       <div>
         <TextField
-          required
           fullWidth
           id="firstname"
           label="First name"
@@ -17,7 +16,6 @@ class FormInputs extends React.Component {
           onChange={this.props.handleChange}
         />
         <TextField
-          required
           fullWidth
           id="surname"
           label="Surname"
@@ -28,7 +26,6 @@ class FormInputs extends React.Component {
           onChange={this.props.handleChange}
         />
         <TextField
-          required
           fullWidth
           id="date_of_birth"
           label="Date of birth"
@@ -40,7 +37,6 @@ class FormInputs extends React.Component {
           onChange={this.props.handleChange}
         />
         <TextField
-          required
           fullWidth
           id="phone_number"
           label="Phone number"
@@ -51,7 +47,6 @@ class FormInputs extends React.Component {
           onChange={this.props.handleChange}
         />
         <TextField
-          required
           fullWidth
           id="email"
           label="Email"

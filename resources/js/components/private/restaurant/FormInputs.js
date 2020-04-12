@@ -6,7 +6,6 @@ class FormInputs extends React.Component {
     return (
       <div>
         <TextField
-          required
           fullWidth
           id="name"
           label="Name"
@@ -17,7 +16,6 @@ class FormInputs extends React.Component {
           onChange={this.props.handleChange}
         />
         <TextField
-          required
           fullWidth
           id="description"
           label="Description"
@@ -28,7 +26,6 @@ class FormInputs extends React.Component {
           onChange={this.props.handleChange}
         />
         <TextField
-          required
           fullWidth
           id="address"
           label="Address"
@@ -39,7 +36,6 @@ class FormInputs extends React.Component {
           onChange={this.props.handleChange}
         />
         <TextField
-          required
           fullWidth
           id="lat"
           label="Latitude"
@@ -52,7 +48,6 @@ class FormInputs extends React.Component {
           onChange={this.props.handleChange}
         />
         <TextField
-          required
           fullWidth
           id="lon"
           label="Longitude"
