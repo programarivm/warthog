@@ -3,7 +3,6 @@ import Grid from '@material-ui/core/Grid'
 import { Footer } from './Footer';
 import { Link } from 'react-router-dom';
 import React from 'react';
-import './Home.css';
 
 function Home() {
   return (

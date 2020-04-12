@@ -61,7 +61,7 @@ class RestaurantCreate extends React.Component {
             size="small"
             fullWidth
           >
-            <Button color="primary" type="submit">Add restaurant</Button>
+            <Button color="primary" type="submit">Add</Button>
             <Button color="secondary" onClick={ (e) => this.handleClickCancel(e) }>Cancel</Button>
           </ButtonGroup>
         </form>

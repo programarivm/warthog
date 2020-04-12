@@ -121,7 +121,7 @@ class UserIndex extends React.Component {
                     <TableCell>Phone number</TableCell>
                     <TableCell>Email</TableCell>
                     <Can I="store" a="User">
-                      <TableCell>Actions</TableCell>
+                      <TableCell></TableCell>
                     </Can>
                   </TableRow>
                 </TableHead>

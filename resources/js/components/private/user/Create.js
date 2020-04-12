@@ -64,6 +64,7 @@ class UserCreate extends React.Component {
             name="password"
             type="password"
             margin="normal"
+            InputLabelProps={{ shrink: true }}
             value={this.state.record.password}
             onChange={this.handleChange}
           />
@@ -72,7 +73,7 @@ class UserCreate extends React.Component {
             size="small"
             fullWidth
           >
-            <Button color="primary" type="submit">Add user</Button>
+            <Button color="primary" type="submit">Add</Button>
             <Button color="secondary" onClick={ (e) => this.handleClickCancel(e) }>Cancel</Button>
           </ButtonGroup>
         </form>

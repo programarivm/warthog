@@ -1,4 +1,4 @@
-import { AppBar, Button, ButtonGroup, IconButton, Toolbar } from '@material-ui/core';
+import { AppBar, Button, ButtonGroup, Toolbar } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { Home } from './Home';
 import { Link, NavLink, Route, Redirect } from 'react-router-dom';
@@ -11,11 +11,8 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(1),
-  },
   menuOption: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(5),
     color: '#fff',
     '&:hover': {
        color: '#fff',
@@ -23,6 +20,7 @@ const styles = theme => ({
   },
   buttonGroup: {
     backgroundColor: '#fff',
+    marginLeft: 'auto',
   },
 });
 
@@ -33,16 +31,20 @@ class MainNav extends React.Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-              <NavLink tag={Link} to="/home" className={classes.menuOption}>
-                <img src={logo} alt="Warthog logo" />
-              </NavLink>
-            </IconButton>
-            <NavLink tag={Link} to="/home" className={classes.menuOption}>Home</NavLink>
-            <NavLink tag={Link} to="/reviews" className={classes.menuOption}>Reviews</NavLink>
+            <NavLink tag={Link} to="/home" className={classes.menuOption}>
+              <img src={logo} alt="Warthog logo" />
+            </NavLink>
+            <NavLink tag={Link} to="/home" className={classes.menuOption}>
+              Home
+            </NavLink>
+            <NavLink tag={Link} to="/reviews" className={classes.menuOption}>
+              Reviews
+            </NavLink>
             <ButtonGroup size="small" aria-label="small outlined button group" className={classes.buttonGroup}>
               <Button>
-                <NavLink tag={Link} to="/login">Sign in</NavLink>
+                <NavLink tag={Link} to="/login">
+                  Sign in
+                </NavLink>
               </Button>
             </ButtonGroup>
           </Toolbar>

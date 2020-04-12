@@ -114,7 +114,7 @@ class ReviewIndex extends React.Component {
                     <TableCell>Comment</TableCell>
                     <TableCell align="right">Points</TableCell>
                     <Can I="delete" a="Review">
-                      <TableCell>Actions</TableCell>
+                      <TableCell></TableCell>
                     </Can>
                   </TableRow>
                 </TableHead>

@@ -118,7 +118,7 @@ class RestaurantIndex extends React.Component {
                     <TableCell>Description</TableCell>
                     <TableCell>Address</TableCell>
                     <TableCell>Coordinates</TableCell>
-                    <TableCell>Actions</TableCell>
+                    <TableCell></TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>

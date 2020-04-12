@@ -1,4 +1,4 @@
-import { AppBar, Button, ButtonGroup, IconButton, Toolbar } from '@material-ui/core';
+import { AppBar, Button, ButtonGroup, Toolbar } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import Can from '../Can';
 import { Link, NavLink, Route } from 'react-router-dom';
@@ -13,11 +13,8 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(1),
-  },
   menuOption: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(5),
     color: '#fff',
     '&:hover': {
        color: '#fff',
@@ -25,6 +22,7 @@ const styles = theme => ({
   },
   buttonGroup: {
     backgroundColor: '#fff',
+    marginLeft: 'auto',
   },
 });
 
@@ -35,21 +33,27 @@ class MainNav extends React.Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-              <NavLink tag={Link} to="/home" className={classes.menuOption}>
-                <img src={logo} alt="Warthog logo" />
-              </NavLink>
-            </IconButton>
-            <NavLink tag={NavLink} to="/reviews" activeClassName="active" className={classes.menuOption}>Reviews</NavLink>
+            <NavLink tag={Link} to="/home" className={classes.menuOption}>
+              <img src={logo} alt="Warthog logo" />
+            </NavLink>
+            <NavLink tag={NavLink} to="/reviews" activeClassName="active" className={classes.menuOption}>
+              Reviews
+            </NavLink>
             <Can I="index" a="User">
-              <NavLink tag={NavLink} to="/users" activeClassName="active" className={classes.menuOption}>Users</NavLink>
+              <NavLink tag={NavLink} to="/users" activeClassName="active" className={classes.menuOption}>
+                Users
+              </NavLink>
             </Can>
             <Can I="update" a="Restaurant">
-              <NavLink tag={NavLink} to="/restaurants" activeClassName="active" className={classes.menuOption}>Restaurants</NavLink>
+              <NavLink tag={NavLink} to="/restaurants" activeClassName="active" className={classes.menuOption}>
+                Restaurants
+              </NavLink>
             </Can>
             <ButtonGroup size="small" aria-label="small outlined button group" className={classes.buttonGroup}>
               <Button>
-                <NavLink tag={Link} to="/logout">Sign out</NavLink>
+                <NavLink tag={Link} to="/logout">
+                  Sign out
+                </NavLink>
               </Button>
             </ButtonGroup>
           </Toolbar>

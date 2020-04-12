@@ -12,6 +12,7 @@ class FormInputs extends React.Component {
           label="Name"
           name="name"
           margin="normal"
+          InputLabelProps={{ shrink: true }}
           value={this.props.name}
           onChange={this.props.handleChange}
         />
@@ -22,6 +23,7 @@ class FormInputs extends React.Component {
           label="Description"
           name="description"
           margin="normal"
+          InputLabelProps={{ shrink: true }}
           value={this.props.description}
           onChange={this.props.handleChange}
         />
@@ -32,6 +34,7 @@ class FormInputs extends React.Component {
           label="Address"
           name="address"
           margin="normal"
+          InputLabelProps={{ shrink: true }}
           value={this.props.address}
           onChange={this.props.handleChange}
         />
@@ -43,6 +46,7 @@ class FormInputs extends React.Component {
           name="lat"
           type="number"
           margin="normal"
+          InputLabelProps={{ shrink: true }}
           inputProps={{ step: "0.00000001" }}
           value={this.props.lat}
           onChange={this.props.handleChange}
@@ -55,6 +59,7 @@ class FormInputs extends React.Component {
           name="lon"
           type="number"
           margin="normal"
+          InputLabelProps={{ shrink: true }}
           inputProps={{ step: "0.00000001" }}
           value={this.props.lon}
           onChange={this.props.handleChange}
