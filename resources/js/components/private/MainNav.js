@@ -36,13 +36,7 @@ class MainNav extends React.Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <NavLink
-              tag={Link}
-              to="/home"
-              className={classes.menuOption}
-            >
-              <img src={logo} alt="Warthog logo" />
-            </NavLink>
+            <img src={logo} alt="Warthog logo" className={classes.menuOption} />
             <NavLink
               tag={NavLink}
               to="/reviews"
