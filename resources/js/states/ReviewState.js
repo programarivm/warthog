@@ -7,7 +7,7 @@ export default class ReviewState {
           id: ''
         },
         comment: '',
-        points: [5]
+        points: [3]
       }
     };
   }

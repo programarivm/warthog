@@ -64,12 +64,7 @@ class ReviewCreate extends React.Component {
 
   handleClickCancel(e) {
     e.preventDefault();
-    this.setState({
-      response: [],
-      modal: {
-        open: false
-      }
-    });
+    this.setState(initialState);
   }
 
   handleSubmitForm(e) {
@@ -130,7 +125,7 @@ class ReviewCreate extends React.Component {
                 <Range
                   step={1}
                   min={0}
-                  max={10}
+                  max={5}
                   values={this.state.record.points}
                   onChange={values => {
                     let newState = Object.assign({}, this.state);
@@ -174,7 +169,7 @@ class ReviewCreate extends React.Component {
                   onChange={this.handleChange}
                 />
                 <ButtonGroup>
-                  <Button type="submit" color="primary">Update</Button>
+                  <Button type="submit" color="primary">Accept</Button>
                   <Button color="secondary" onClick={ (e) => this.handleClickCancel(e) }>Cancel</Button>
                 </ButtonGroup>
               </form>
