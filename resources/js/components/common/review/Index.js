@@ -1,6 +1,6 @@
 import ApiReviewActions from '../../../actions/api/ReviewActions';
 import { Grid, IconButton, Paper, Table, TableBody, TableCell,
-  TableContainer, TableFooter, TableHead, TablePagination, TableRow } from '@material-ui/core';
+  TableContainer, TableFooter, TablePagination, TableRow } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import Loading from '../../Loading';
 import { LoremIpsum } from '../LoremIpsum';
 import React from 'react';
+import starIcon from '../../../../images/star-icon.png';
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -102,23 +103,19 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
+    let stars = (n) => {
+      let result = [];
+      new Array(n).fill().forEach((item) => {
+        result.push(<img src={starIcon} alt="star icon" />);
+      });
+      return result;
+    };
+
     return (
       <Grid container>
         <Loading loading={this.props.loading}>
             <TableContainer component={Paper}>
               <Table aria-label="simple table">
-                <TableHead>
-                  <TableRow>
-                    <TableCell></TableCell>
-                    <TableCell>User</TableCell>
-                    <TableCell>Restaurant</TableCell>
-                    <TableCell>Comment</TableCell>
-                    <TableCell align="right">Points</TableCell>
-                    <Can I="delete" a="Review">
-                      <TableCell></TableCell>
-                    </Can>
-                  </TableRow>
-                </TableHead>
                 <TableBody>
                   {this.props.data ? this.props.data.slice(this.state.page * this.state.rowsPerPage, this.state.page * this.state.rowsPerPage + this.state.rowsPerPage).map((row, i) => {
                     let d = new Date(row.created_at);
@@ -127,7 +124,7 @@ class ReviewIndex extends React.Component {
                       <TableCell>{row.user ? row.user.firstname : null}</TableCell>
                       <TableCell>{row.restaurant ? row.restaurant.name : null}</TableCell>
                       <TableCell>{row.comment}</TableCell>
-                      <TableCell align="right">{row.points}</TableCell>
+                      <TableCell align="right">{stars(row.points)}</TableCell>
                       <Can I="delete" a="Review">
                         <TableCell align="right">
                           <IconButton

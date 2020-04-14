@@ -124,7 +124,7 @@ class ReviewCreate extends React.Component {
                 <InputLabel>Slide the square sincerely:</InputLabel>
                 <Range
                   step={1}
-                  min={0}
+                  min={1}
                   max={5}
                   values={this.state.record.points}
                   onChange={values => {
