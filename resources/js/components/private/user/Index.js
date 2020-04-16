@@ -10,16 +10,10 @@ import LastPageIcon from '@material-ui/icons/LastPage';
 import Can from '../../Can';
 import { connect } from 'react-redux';
 import Loading from '../../Loading';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
 import React from 'react';
 import UserEdit from './Edit';
-
-const useStyles1 = makeStyles((theme) => ({
-  root: {
-    flexShrink: 0,
-    marginLeft: theme.spacing(2.5),
-  },
-}));
+import { useTheme } from '@material-ui/core/styles';
+import myTableStyles from '../../styles/myTable';
 
 class UserIndex extends React.Component {
   constructor(props) {
@@ -58,7 +52,7 @@ class UserIndex extends React.Component {
   tablePaginationActions(props) {
     const theme = useTheme();
 
-    const classes = useStyles1();
+    const classes = myTableStyles();
 
     const { count, page, rowsPerPage, onChangePage } = props;
 

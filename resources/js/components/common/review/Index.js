@@ -6,20 +6,14 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Can from '../../Can';
 import { connect } from 'react-redux';
 import Loading from '../../Loading';
 import { LoremIpsum } from '../LoremIpsum';
 import React from 'react';
 import starIcon from '../../../../images/star-icon.png';
-
-const useStyles1 = makeStyles((theme) => ({
-  root: {
-    flexShrink: 0,
-    marginLeft: theme.spacing(2.5),
-  },
-}));
+import { useTheme } from '@material-ui/core/styles';
+import myTableStyles from '../../styles/myTable';
 
 class ReviewIndex extends React.Component {
   constructor(props) {
@@ -52,7 +46,7 @@ class ReviewIndex extends React.Component {
   tablePaginationActions(props) {
     const theme = useTheme();
 
-    const classes = useStyles1();
+    const classes = myTableStyles();
 
     const { count, page, rowsPerPage, onChangePage } = props;
 
