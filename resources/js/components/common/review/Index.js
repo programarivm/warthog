@@ -98,11 +98,11 @@ class ReviewIndex extends React.Component {
 
   render() {
     let stars = (n) => {
-      let result = [];
+      let rating = [];
       new Array(n).fill().forEach((item, i) => {
-        result.push(<img key={i} src={starIcon} alt="star icon" />);
+        rating.push(<img key={i} src={starIcon} alt="star icon" />);
       });
-      return result;
+      return rating;
     };
 
     return (
