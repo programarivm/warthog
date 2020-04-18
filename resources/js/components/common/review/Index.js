@@ -66,12 +66,11 @@ class ReviewIndex extends React.Component {
                 { field: "restaurant.name" },
                 { field: "comment" },
                 {
-                  field: "points",
                   render: row => stars(row.points)
                 },
                 {
                   render: row =>
-                    <Can I="delete" a="Review">
+                    <div>
                       <IconButton
                         aria-label="delete"
                         color="secondary"
@@ -79,7 +78,7 @@ class ReviewIndex extends React.Component {
                       >
                         <DeleteIcon />
                       </IconButton>
-                    </Can>
+                    </div>
                 }
               ]}
               data={this.props.data}
@@ -100,7 +99,6 @@ class ReviewIndex extends React.Component {
                 { field: "restaurant.name" },
                 { field: "comment" },
                 {
-                  field: "points",
                   render: row => stars(row.points)
                 }
               ]}
