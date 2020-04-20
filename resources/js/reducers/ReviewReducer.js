@@ -17,7 +17,7 @@ export default (state = initialState, action) => {
         }
       };
       obj.record.restaurant.id = action.restaurants[0].id;
-      obj.record.points = [5];
+      obj.record.points = [3];
       return obj;
     case ReviewActionTypes.CLICK_ERROR:
       return {

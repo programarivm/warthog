@@ -51,7 +51,7 @@ class ReviewCreate extends React.Component {
 
   handleChange = e => {
     let record = {...this.state.record};
-    switch (e.target.id) {
+    switch (e.target.name) {
       case 'restaurant':
         record.restaurant.id = e.target.value;
         break;
