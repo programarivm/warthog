@@ -23,7 +23,7 @@ class ReviewsTableSeeder extends Seeder
             foreach ($users as $user) {
                 Review::create([
                     'points' => rand(1, 5),
-                    'comment' => $faker->sentence(),
+                    'comment' => $faker->sentences(3, true),
                     'user_id' => $user->id,
                     'restaurant_id' => $restaurant->id,
                     'created_at' => $faker->dateTimeBetween('2017-01-01', '2019-10-22'),
