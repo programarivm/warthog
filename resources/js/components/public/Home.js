@@ -7,23 +7,22 @@ import stickyNotes from '../../../images/sticky-notes.jpg';
 
 function Home() {
   return (
-    <Grid container style={{ margin: 20, padding: 20 }}>
-      <Grid item xs={7}>
-        <h3>What's being said about the restaurants in your area?</h3>
-        <h5>This is a real-world example SPA: a React GUI interacting with a Laravel API with the following features.</h5>
-        <ul>
-          <li>ACL (access control list)</li>
-          <li>JWT authentication</li>
-          <li>CRUD implementation</li>
-          <li>REST API</li>
-          <li>Redux</li>
-          <li>Data-driven tests</li>
-        </ul>
-        <Button variant="contained" color="primary" component={Link} to={'/login'}>Find out now!</Button>
+    <Grid container style={{ marginTop: 40 }}>
+      <Grid item xs={2}></Grid>
+      <Grid container justify="center" xs={7}>
+        <h2 style={{ marginBottom: 20 }}>What's being said about the restaurants in your area?</h2>
+        <h5>
+          This is a real-world example SPA, a React GUI interacting with a Laravel API with the following features: ACL (access control list),
+          JWT authentication, CRUD implementation, REST API, Redux, Data-driven tests.
+        </h5>
+        <Grid container justify="center" style={{ margin: 20 }}>
+          <img src={stickyNotes} alt="Warthog logo" style={{ marginTop: 15, maxWidth: 400 }}/>
+        </Grid>
+        <Grid container justify="center">
+          <Button variant="contained" color="primary" component={Link} to={'/login'}>Find out now!</Button>
+        </Grid>
       </Grid>
-      <Grid item xs={5}>
-        <img src={stickyNotes} alt="Warthog logo" style={{ maxWidth: 400 }}/>
-      </Grid>
+      <Grid item xs={2}></Grid>
       <hr />
       <Footer />
     </Grid>
