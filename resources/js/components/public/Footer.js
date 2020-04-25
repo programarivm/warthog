@@ -18,7 +18,7 @@ function Footer() {
         backgroundColor: '#e8e8e8'
       }}
     >
-      <Grid container xs={6} style={{ paddingTop: 35 }}>
+      <Grid container item xs={6} style={{ paddingTop: 35 }}>
         <Grid item xs={3}></Grid>
         <Grid item xs={6}>
           <Typography color="secondary" variant="subtitle2">
@@ -29,7 +29,7 @@ function Footer() {
         </Grid>
         <Grid item xs={3}></Grid>
       </Grid>
-      <Grid container xs={3}>
+      <Grid item xs={3}>
         <List component="nav" aria-label="legal">
           <ListItem button>
             <ListItemIcon>
@@ -51,7 +51,7 @@ function Footer() {
           </ListItem>
         </List>
       </Grid>
-      <Grid container xs={3}>
+      <Grid item xs={3}>
         <List component="nav" aria-label="social">
           <ListItem button>
             <ListItemIcon>
