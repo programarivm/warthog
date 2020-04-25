@@ -19,7 +19,12 @@ export default function MyAccountMenu() {
 
   return (
     <div>
-      <Button size="small" aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
+      <Button
+        size="small"
+        aria-controls="fade-menu"
+        aria-haspopup="true"
+        onClick={handleClick}
+      >
         My account
       </Button>
       <Menu
@@ -31,7 +36,10 @@ export default function MyAccountMenu() {
         TransitionComponent={Fade}
       >
         <MenuItem>
-          <NavLink tag={Link} to="/logout">
+          <NavLink
+            tag={Link}
+            to="/logout"
+          >
             Sign out
           </NavLink>
         </MenuItem>
