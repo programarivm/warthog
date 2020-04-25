@@ -2,6 +2,7 @@ import { AppBar, Button, ButtonGroup, Toolbar } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import Can from '../Can';
 import { Link, NavLink, Route } from 'react-router-dom';
+import MyAccountMenu from './MyAccountMenu';
 import React from 'react';
 import Restaurants from './Restaurants';
 import Reviews from '../common/Reviews';
@@ -66,11 +67,7 @@ class MainNav extends React.Component {
               </NavLink>
             </Can>
             <ButtonGroup size="small" aria-label="small outlined button group" className={classes.buttonGroup}>
-              <Button>
-                <NavLink tag={Link} to="/logout">
-                  Sign out
-                </NavLink>
-              </Button>
+              <MyAccountMenu />
             </ButtonGroup>
           </Toolbar>
         </AppBar>
