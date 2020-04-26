@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import PrivateApp from './components/private/App';
 import PublicApp from './components/public/App';
 import React, { Component } from 'react';
-import './Warthog.css';
 
 class Warthog extends Component {
   render() {
