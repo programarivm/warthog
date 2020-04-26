@@ -55,7 +55,7 @@ The app can now run on your favourite web browser by typing https://warthog.loca
 </p>
 
 <p align="center">
-    <b>Figure 2</b>. John reviewing a restaurant
+    <b>Figure 2</b>. Login page
 </p>
 
 <p align="center">
@@ -63,7 +63,15 @@ The app can now run on your favourite web browser by typing https://warthog.loca
 </p>
 
 <p align="center">
-    <b>Figure 3</b>. Bob adding a user
+    <b>Figure 3</b>. Reviews page
+</p>
+
+<p align="center">
+    <img src="https://github.com/programarivm/warthog/blob/master/resources/images/Figure-04.png" />
+</p>
+
+<p align="center">
+    <b>Figure 4</b>. Bob adding a restaurant
 </p>
 
 ### Contributions
