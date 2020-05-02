@@ -1,7 +1,7 @@
-import loading from '../../images/loading.gif';
-import React, { Component } from 'react';
+import loading from '@/../images/loading.gif';
+import React from 'react';
 
-class Loading extends Component {
+class Loading extends React.Component {
   constructor(props) {
     super(props);
   }

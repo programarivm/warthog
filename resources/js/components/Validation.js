@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Validation extends Component {
+class Validation extends React.Component {
   render() {
     return (
       <ul className="text-danger">

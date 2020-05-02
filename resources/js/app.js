@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Warthog from './Warthog.js';
+import Warthog from '@/Warthog.js';
 import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import Store from './Store.js';
+import Store from '@/Store.js';
 
 ReactDOM.render(
   <Provider store={Store}>
