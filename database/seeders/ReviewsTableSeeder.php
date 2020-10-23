@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Restaurant;
 use App\Review;
 use App\User;
