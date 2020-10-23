@@ -16,29 +16,27 @@ This is a React app with Redux interacting with a Laravel API in a LEMP stack, a
 
 Create an `.env` file:
 
-    cp .env.example .env
+    $ cp .env.example .env
 
 Bootstrap the development environment:
 
-    bash/dev/start.sh
-
-[Click here](https://github.com/programarivm/warthog/blob/master/bash/dev/start.sh) for further details on the `start.sh` script.
+    $ bash/dev/start.sh
 
 ### Local Set up
 
-Finally, don't forget to add the following entry to your `/etc/hosts` file:
+To find out the IP of your `warthog_nginx` container:
+
+    $ echo $(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' warthog_nginx)
+
+Then add the IP to your `/etc/hosts` file:
 
     172.21.0.1      warthog.local
 
-To find out the IP of the `warthog_nginx` container:
-
-    echo $(docker inspect -f '{{range .NetworkSettings.Networks}}{{.Gateway}}{{end}}' warthog_nginx)
-
-The app can now run on your favourite web browser by typing https://warthog.local into the address bar.
+Open your favourite web browser and type `https://warthog.local` into the address bar.
 
 ### Run the Tests
 
-    docker exec -it --user 1000:1000 warthog_php_fpm ./vendor/bin/phpunit
+    $ docker exec -it --user 1000:1000 warthog_php_fpm ./vendor/bin/phpunit
 
 ### Screenshots
 
