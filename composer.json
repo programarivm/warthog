@@ -40,7 +40,11 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests"
+            "Tests\\": "tests/",
+            "Tests\\Api\\": "tests/api/",
+            "Tests\\Api\\Auth\\": "tests/api/auth/",
+            "Tests\\Api\\Reviews\\": "tests/api/reviews/",
+            "Tests\\Api\\Users\\": "tests/api/users/"
         }
     },
     "minimum-stability": "dev",
