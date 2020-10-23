@@ -45,5 +45,7 @@ class DbReset extends Command
         $this->call('db:seed', ['--class' => 'UsersTableSeeder']);
         $this->call('db:seed', ['--class' => 'RestaurantsTableSeeder']);
         $this->call('db:seed', ['--class' => 'ReviewsTableSeeder']);
+
+        return 0;
     }
 }

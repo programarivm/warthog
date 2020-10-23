@@ -41,6 +41,8 @@ class AclSetup extends Command
         $this->storeInDatabase();
 
         file_put_contents(storage_path().'/ability-rules.json', $this->caslAbilityRules());
+
+        return 0;
     }
 
     private function storeInDatabase()
