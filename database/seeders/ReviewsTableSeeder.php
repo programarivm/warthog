@@ -18,8 +18,8 @@ class ReviewsTableSeeder extends Seeder
     {
         $faker = \Faker\Factory::create();
 
-        $restaurants = App\Restaurant::all();
-        $users = App\User::all();
+        $restaurants = Restaurant::all();
+        $users = User::all();
 
         foreach ($restaurants as $restaurant) {
             foreach ($users as $user) {
