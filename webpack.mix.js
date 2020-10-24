@@ -1,5 +1,7 @@
 const mix = require('laravel-mix');
 
+require('laravel-mix-splitjs');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -20,4 +22,7 @@ mix.react('resources/js/app.js', 'public/js')
           "@": __dirname + "/resources/js"
         }
       }
-   });
+   })
+   .splitJs({
+       maxChunks: 1
+    });
