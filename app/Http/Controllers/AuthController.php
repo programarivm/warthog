@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Cookie;
 
 class AuthController extends Controller
 {
@@ -22,8 +23,27 @@ class AuthController extends Controller
         ];
 
         return response(null, 204)
-            ->cookie(self::COOKIE_ACCESS_TOKEN, $token, 480)
-            ->cookie(self::COOKIE_SESSION, json_encode($session), 480, null, null, null, false);
+            ->cookie(
+                self::COOKIE_ACCESS_TOKEN,  // name
+                $token,                     // value
+                480,                        // minutes
+                null,                       // path
+                null,                       // domain
+                true,                       // secure
+                true,                       // HttpOnly
+                false,                      // raw
+                Cookie::SAMESITE_STRICT     // SameSite
+            )->cookie(
+                self::COOKIE_SESSION,
+                json_encode($session),
+                480,
+                null,
+                null,
+                true,
+                false,
+                false,
+                Cookie::SAMESITE_STRICT
+            );
     }
 
     public function logout()
